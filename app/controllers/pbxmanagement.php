@@ -43,7 +43,8 @@ class Pbxmanagement extends \Forge\Controller {
 	}
 	
 	public static function ajax_get_account() {
-		$account_id  = (!empty(Input::post('account_id')) ? Input::post('account_id') : '');
+		$account_id 	= Input::post('account_id');
+		$account_id  = (!empty($account_id) ? $account_id : '');
 		
 		if ($account_id == '') {
 			return array('status' => 'ERROR', 'message' => 'Account ID can\'t be empty');
@@ -98,7 +99,7 @@ class Pbxmanagement extends \Forge\Controller {
 	}
 	
 	public static function get_callgroup() {
-		$callpickup_id 	= Input::post('page');
+		$callpickup_id 	= Input::post('callpickup_id');
 		$callpickup_id  = (!empty($callpickup_id) ? $callpickup_id : '');
 		
 		if ($callpickup_id == '') {
