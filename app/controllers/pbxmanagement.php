@@ -31,8 +31,11 @@ class Pbxmanagement extends \Forge\Controller {
 	}
 	
 	public static function ajax_extension_list() {
-		$page  	  = (!empty(Input::post('page')) ? Input::post('page') : 1);
-		$keywords = (!empty(Input::post('keywords')) ? Input::post('keywords') : '');
+		$page 	= Input::post('page');
+		$keywords = Input::post('keywords');
+		
+		$page  	  = (!empty($page) ? $page : 1);
+		$keywords = (!empty($keywords) ? $keywords : '');
 		
 		$ObjExtensionModel = new ExtensionModel();
         $record = $ObjExtensionModel->getAll(5, '', $page, $keywords);
@@ -49,14 +52,7 @@ class Pbxmanagement extends \Forge\Controller {
 		$ObjExtensionModel = new ExtensionModel();
 		$ObjManagerModel = new ManagerModel();
 		
-		//$callforword = $ObjManagerModel->listCallforward(1, $account_id);
-		//$callforword = $ObjManagerModel->listCallforward(1, 360);
-		//$speeddial = $ObjManagerModel->listSpeeddial(1, 360);
-		
 		$record = $ObjExtensionModel->getAll(5, $account_id);
-		
-		//$record['callforward'] = $callforword;
-		//$record['speeddial'] = $speeddial;
 		
 		echo json_encode($record);
 	}
@@ -90,8 +86,11 @@ class Pbxmanagement extends \Forge\Controller {
 	}
 	
 	public static function callgroup_list() {
-		$page  	  = (!empty(Input::post('page')) ? Input::post('page') : 1);
-		$keywords = (!empty(Input::post('keywords')) ? Input::post('keywords') : '');
+		$page 	= Input::post('page');
+		$keywords = Input::post('keywords');
+		
+		$page  	  = (!empty($page) ? $page : 1);
+		$keywords = (!empty($keywords) ? $keywords : '');
 		
 		$ObjCallgroupModel = new CallgroupModel();
         $record = $ObjCallgroupModel->getAll(5, '', $page, $keywords);
@@ -169,8 +168,11 @@ class Pbxmanagement extends \Forge\Controller {
 	
 	
 	public static function ajax_announcement_list() {
-		$page  	  = (!empty(Input::post('page')) ? Input::post('page') : 1);
-		$keywords = (!empty(Input::post('keywords')) ? Input::post('keywords') : '');
+		$page 	= Input::post('page');
+		$keywords = Input::post('keywords');
+		
+		$page  	  = (!empty($page) ? $page : 1);
+		$keywords = (!empty($keywords) ? $keywords : '');
 		
 		$ObjAnnouncementModel = new AnnouncementModel();
         $record = $ObjAnnouncementModel->getAll(5, '', $page, $keywords);
