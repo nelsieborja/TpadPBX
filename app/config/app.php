@@ -19,7 +19,8 @@ return array(
          Forge\Core::path('app').'libraries/',
          Forge\Core::path('app').'models/',
          Forge\Core::path('app').'controllers/',
-         Forge\Core::path('app').'api/'
+         Forge\Core::path('app').'api/',
+		 Forge\Core::path('app').'modules/'
       ),
 
       'class' => array(
