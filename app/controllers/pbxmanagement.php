@@ -98,7 +98,8 @@ class Pbxmanagement extends \Forge\Controller {
 	}
 	
 	public static function get_callgroup() {
-		$callpickup_id  = (!empty(Input::post('callpickup_id')) ? Input::post('callpickup_id') : '');
+		$callpickup_id 	= Input::post('page');
+		$callpickup_id  = (!empty($callpickup_id) ? $callpickup_id : '');
 		
 		if ($callpickup_id == '') {
 			return array('status' => 'ERROR', 'message' => 'Call Pickup ID can\'t be empty');
