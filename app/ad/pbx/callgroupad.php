@@ -54,7 +54,7 @@ class CallgroupAd extends \Model {
             $qry -> execute($param);
 
             $response['data'] = $qry -> fetchAll();
-            $response['status'] = 'SUCCESS';
+            $response['status'] = 'SUCCESS---';
 
             if (isset($options['total']) && $options['total']) {
                 $response['total'] = self::getTotalRows('tp_callpickup', $where, $param);
